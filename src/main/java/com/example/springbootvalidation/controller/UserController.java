@@ -1,6 +1,7 @@
 package com.example.springbootvalidation.controller;
 
 import com.example.springbootvalidation.model.User;
+import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 public class UserController {
@@ -10,7 +11,7 @@ public class UserController {
     }
 
     @RequestMapping("addUser")
-    public String add(User user, BindingResult result) {
+    public String add(@Valid User user, BindingResult result) {
         if (result.hasErrors()) {
             return "add";
         }
