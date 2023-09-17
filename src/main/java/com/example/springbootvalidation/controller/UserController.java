@@ -8,4 +8,13 @@ public class UserController {
     public String toAdd(User user) {
         return "add";
     }
+
+    @RequestMapping("addUser")
+    public String add(User user, BindingResult result) {
+        if (result.hasErrors()) {
+            return "add";
+        }
+        System.out.println("Save user =" + user);
+        return "success";
+    }
 }
