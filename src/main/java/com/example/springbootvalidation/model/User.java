@@ -1,5 +1,6 @@
 package com.example.springbootvalidation.model;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -15,6 +16,9 @@ public class User {
     @Min(value = 0)
     @Max(value = 100 , message = "grade should not exceed 100")
     private Double grade;
+    @Email
+    private String email;
+
 
     public User(String name, String passwork, Double grade) {
         this.name = name;
@@ -44,5 +48,13 @@ public class User {
 
     public void setGrade(Double grade) {
         this.grade = grade;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
