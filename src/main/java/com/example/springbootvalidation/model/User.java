@@ -6,13 +6,13 @@ public class User {
 
     @NotBlank(message = "username cannot be empty")
     private String name;
-    @NotBlank(message = "username cannot be empty")
-    private String passwork;
+    @NotBlank(message = "password cannot be empty")
+    private String password;
     private Double grade;
 
     public User(String name, String passwork, Double grade) {
         this.name = name;
-        this.passwork = passwork;
+        this.password = passwork;
         this.grade = grade;
     }
 
@@ -24,12 +24,12 @@ public class User {
         this.name = name;
     }
 
-    public String getPasswork() {
-        return passwork;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasswork(String passwork) {
-        this.passwork = passwork;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Double getGrade() {
